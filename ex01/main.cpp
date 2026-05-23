@@ -1,4 +1,5 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 #include <iostream>
 
 int main(void) {
@@ -49,7 +50,24 @@ int main(void) {
         ClapTrap temp("TempTrap");
         std::cout << "TempTrap about to go out of scope..." << std::endl;
     }
-    
+
+    std::cout << "\n TEST 11: ScavTrap construction and Gate keeper mode " << std::endl;
+    ScavTrap scav("Scavvy");
+    scav.attack("EnemyA");
+    scav.guardGate();
+
+    std::cout << "\n TEST 12: ScavTrap scope construction/destruction chaining " << std::endl;
+    {
+        ScavTrap tempScav("TempScav");
+        std::cout << "TempScav about to go out of scope..." << std::endl;
+    }
+
+    std::cout << "\n TEST 13: Dynamic delete via base pointer (tests virtual dtor) " << std::endl;
+    {
+        ClapTrap* dyn = new ScavTrap("DynScav");
+        std::cout << "About to delete ClapTrap* pointing to ScavTrap..." << std::endl;
+        delete dyn;
+    }
     std::cout << "\n END OF TESTS " << std::endl;
     return 0;
 }
