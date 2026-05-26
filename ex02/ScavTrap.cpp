@@ -3,7 +3,7 @@
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
     hitPoints = 100;
     energyPoints = 50;
-    attackPoints = 20;
+    attackDamage = 20;
     std::cout << "ScavTrap " << this->name << " is born!" << std::endl;
 }
 
@@ -20,7 +20,7 @@ void ScavTrap::attack(const std::string& target) {
         std::cout << "ScavTrap " << name << " can't attack because it has no energy points!" << std::endl;
         return;
     }
-    std::cout << "ScavTrap " << name << " attacks " << target << " and causes " << attackPoints << " points of damage!" << std::endl;
+    std::cout << "ScavTrap " << name << " attacks " << target << " and causes " << attackDamage << " points of damage!" << std::endl;
     energyPoints -= 1;
 }
 

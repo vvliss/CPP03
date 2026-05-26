@@ -3,27 +3,27 @@
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
     hitPoints = 100;
     energyPoints = 50;
-    attackPoints = 20;
+    attackDamage = 20;
     std::cout << "ScavTrap " << this->name << " is born!" << std::endl;
 }
 
 ScavTrap::~ScavTrap() {
-    std::cout << "ScavTrap " << name << " is destroyed" << std::endl;
+    std::cout << "ScavTrap " << this->name << " is destroyed" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target) {
     if (hitPoints == 0) {
-        std::cout << "ScavTrap " << name << " can't attack because it has no hit points!" << std::endl;
+        std::cout << "ScavTrap " << this->name << " can't attack because it has no hit points!" << std::endl;
         return;
     }
     if (energyPoints == 0) {
-        std::cout << "ScavTrap " << name << " can't attack because it has no energy points!" << std::endl;
+        std::cout << "ScavTrap " << this->name << " can't attack because it has no energy points!" << std::endl;
         return;
     }
-    std::cout << "ScavTrap " << name << " attacks " << target << " and causes " << attackPoints << " points of damage!" << std::endl;
+    std::cout << "ScavTrap " << this->name << " attacks " << target << " and causes " << attackDamage << " points of damage!" << std::endl;
     energyPoints -= 1;
 }
 
 void ScavTrap::guardGate() {
-    std::cout << "ScavTrap " << name << " is now in Gate keeper mode." << std::endl;
+    std::cout << "ScavTrap " << this->name << " is now in Gate keeper mode." << std::endl;
 }

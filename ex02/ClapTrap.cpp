@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const std::string& name) : name(name), hitPoints(10), energyPoints(10), attackPoints(0) {
+ClapTrap::ClapTrap(const std::string& name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) {
     std::cout << "ClapTrap " << this->name << " is created!" << std::endl;
 }
 
@@ -31,7 +31,7 @@ void ClapTrap::attack(const std::string& target) {
         std::cout << "ClapTrap " << name << " can't attack because it has no energy points!" << std::endl;
         return;
     }
-    std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackPoints << " points of damage!" << std::endl;
+    std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
     energyPoints -= 1;
 }
 

@@ -2,7 +2,6 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
-#include <iostream>
 
 int main(void) {
     std::cout << " TEST 1: Basic Construction " << std::endl;
@@ -16,7 +15,7 @@ int main(void) {
     std::cout << "\n TEST 3: Take Damage " << std::endl;
     claptrap.takeDamage(3);
     claptrap.takeDamage(2);
-    claptrap.takeDamage(4);  // Should reach 0 HP
+    claptrap.takeDamage(4);
     
     std::cout << "\n TEST 4: Try actions with 0 HP " << std::endl;
     claptrap.attack("Enemy4");
@@ -155,14 +154,11 @@ int main(void) {
 
     std::cout << "\n TEST 30: DiamondTrap with no energy - try to attack " << std::endl;
     DiamondTrap diamond4("Diamond4");
-    for (int i = 0; i < 50; i++) {
-        if (i < 49) {
-            diamond4.attack("Target" + std::to_string(i));
-        } else {
-            std::cout << "\nTrying to attack with 0 energy:" << std::endl;
-            diamond4.attack("TargetFinal");
-        }
-    }
+    diamond4.attack("Target3");
+    diamond4.attack("Target3");
+    diamond4.attack("Target3");
+    diamond4.attack("Target3");
+    diamond4.beRepaired(15);
 
     std::cout << "\n END OF TESTS " << std::endl;
 

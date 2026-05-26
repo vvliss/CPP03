@@ -13,7 +13,7 @@ int main(void) {
     std::cout << "\n TEST 3: Take Damage " << std::endl;
     claptrap.takeDamage(3);
     claptrap.takeDamage(2);
-    claptrap.takeDamage(4);  // Should reach 0 HP
+    claptrap.takeDamage(5);
     
     std::cout << "\n TEST 4: Try actions with 0 HP " << std::endl;
     claptrap.attack("Enemy4");
